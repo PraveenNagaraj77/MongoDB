@@ -2,10 +2,12 @@ const express = require('express');
 
 const router = express.Router();
 
-const { insertSampleProducts }  = require('../controller/ProductController')
+const { insertSampleProducts , getProductStats ,getProductAnalysis }  = require('../controller/ProductController')
 
 
-router.post('/add',insertSampleProducts)
+router.post('/add',insertSampleProducts);
+router.get('/stats',getProductStats)
+router.get('/analysis',getProductAnalysis)
 
 
 module.exports= router;
